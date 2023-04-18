@@ -1,0 +1,14 @@
+<div class="card" (click)="onToggle()">
+    <h3>{{card.name}}</h3>
+    <img [src]="card.thumbnail + '/preview'" [ngStyle]="{border: '5px solid rgb(' + color[0] + ', ' + color[1] + ', ' + color[2] + ')'}">
+    <p class="type"><em>{{card.type}}</em></p>
+    
+    <hr *ngIf="show">
+    <div class="details" [@openDetail]="detailState" @leaveDetail>
+        <p>Serve in {{card.glass | lowercase}}</p>
+        <p>{{card.instructions}}</p>
+        <ul>
+            <li *ngFor="let ingredient of card.ingredients; let i=index"><span *ngIf="card.measures[i]">{{card.measures[i]}} </span>{{ingredient}}</li>
+        </ul>
+    </div>
+</div>

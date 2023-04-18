@@ -1,0 +1,64 @@
+:host {
+    --card-color: #000be2;
+    --border-color: #000e61;
+}
+
+.card {
+    height: min-content;
+    width: 300px;
+    padding-bottom: 0.5em;
+
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    text-align: center;
+
+    background-color: var(--card-color);
+    color: white;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    border: 5px solid rgb(188, 0, 213);
+}
+
+.card .details {
+    text-align: left;
+    height: 0px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.card .details:not(ul){
+    margin: 0 1em;
+}
+
+.card .type {
+    margin: 0.2em 0;
+}
+
+.card img {
+    border-radius: 10px;
+}
+
+.card h3 {
+    text-shadow: 0 0 10px rgb(255, 0, 208), 0 0 1em blue, 0 0 1em blue;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--card-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

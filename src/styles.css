@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template:
+    "btn" 2% 
+    "head" 10%
+    "wrapper" 88%
+    / 1fr;
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(rgb(31, 65, 200), rgb(101, 31, 200), rgb(163, 31, 200), rgb(230, 126, 0));
+}
