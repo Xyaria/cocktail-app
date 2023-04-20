@@ -1,14 +1,17 @@
-<div class="card" (click)="onToggle()">
-    <h3>{{card.name}}</h3>
+<mat-card class="card" (click)="onToggle()">
+    <mat-card-title>{{card.name}}</mat-card-title>
     <img [src]="card.thumbnail + '/preview'" [ngStyle]="{border: '5px solid rgb(' + color[0] + ', ' + color[1] + ', ' + color[2] + ')'}">
     <p class="type"><em>{{card.type}}</em></p>
-    
-    <hr *ngIf="show">
-    <div class="details" [@openDetail]="detailState" @leaveDetail>
-        <p>Serve in {{card.glass | lowercase}}</p>
-        <p>{{card.instructions}}</p>
-        <ul>
-            <li *ngFor="let ingredient of card.ingredients; let i=index"><span *ngIf="card.measures[i]">{{card.measures[i]}} </span>{{ingredient}}</li>
-        </ul>
-    </div>
-</div>
+    <p *ngIf="detailState == 'open'">Serve in {{card.glass | lowercase}}</p>
+    <mat-card class="details" [@openDetail]="detailState" @leaveDetail>
+        <mat-list>
+            <mat-list-item *ngFor="let ingredient of card.ingredients; let i=index">
+                <p matListItemLine>
+                    <span *ngIf="card.measures[i]">{{card.measures[i]}} </span>
+                    {{ingredient}}
+                </p>
+            </mat-list-item>
+        </mat-list>
+    </mat-card>
+    <a routerLink="{{card.id}}" *ngIf="detailState == 'open'">>More on this cocktail!<</a>
+</mat-card>

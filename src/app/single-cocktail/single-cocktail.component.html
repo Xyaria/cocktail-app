@@ -1,0 +1,36 @@
+<mat-card class="grid" @fadeIn>
+    <mat-card class="cocktailInfo">
+        <mat-card-title>{{cocktail.name}}</mat-card-title>
+        <img mat-card-image [src]="cocktail.thumbnail + '/preview'" style="width: 90%;">
+        <p *ngIf="cocktailExtended.tags">Tags<br>{{cocktailExtended.tags}}</p>
+        <p *ngIf="cocktailExtended.lastModified">Last Modified<br>{{cocktailExtended.lastModified | date : 'dd/MM/yyy'}}</p>
+    </mat-card>
+    <mat-card class="cocktailDetails">
+        <mat-list class="ingredients">
+            <mat-list-item *ngFor="let ingredient of cocktail.ingredients; let i=index">
+                <mat-icon matListItemIcon>arrow_right</mat-icon>
+                <p matListItemLine>
+                    <span *ngIf="cocktail.measures[i]">{{cocktail.measures[i]}} </span>
+                    {{ingredient}}
+                </p>
+            </mat-list-item>
+        </mat-list>
+        <div class="instructions">
+            <p>{{cocktailExtended.instructions}}</p>
+            <p *ngIf="cocktail.glass">Serve in {{cocktail.glass}}</p>
+        </div>
+        <mat-divider color="accent"></mat-divider>
+        <mat-grid-list cols="3" rowHeight="100px" role="list">
+            <mat-grid-tile role="listitem">
+                <p matListItemLine>Category: {{cocktailExtended.category ? cocktailExtended.category : 'none'}}</p>
+            </mat-grid-tile>
+            <mat-grid-tile role="listitem">
+                <p matListItemLine>IBA: {{cocktailExtended.IBA ? cocktailExtended.IBA : 'none'}}</p>
+            </mat-grid-tile>
+            <mat-grid-tile role="listitem">
+                <p matListItemLine>Type: {{cocktail.type ? cocktail.type : 'none'}}</p>
+            </mat-grid-tile>
+        </mat-grid-list>
+        
+    </mat-card>
+</mat-card>

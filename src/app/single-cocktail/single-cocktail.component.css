@@ -1,0 +1,71 @@
+.grid {
+    display: grid;
+    height: 80vh;
+    margin: 1em;
+    grid-template:
+    "info detail" 1fr
+    / 1fr 5fr;
+    gap: 1em;
+    background-color: transparent;
+}
+
+.cocktailInfo {
+    grid-area: 'info';
+    
+    text-align: center;
+    background-color: var(--card-color);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.cocktailInfo mat-card-title {
+    margin: 0.5em auto;
+    width: 90%;
+    font-family: 'VT323';
+    font-size: 38px;
+}
+
+.cocktailInfo img {
+    margin: 1.5em auto;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.cocktailDetails {
+    grid-area: 'detail';
+    display: grid;
+    grid-template:
+    "ingredients instructions" auto
+    "divider divider" 1fr
+    "other other" 2fr
+    / 1fr 1fr;
+    padding: 1em;
+    
+    background-color: var(--card-color);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.cocktailDetails mat-list-item {
+    height: 30px;
+}
+
+.cocktailDetails mat-list-item * {
+    color: white !important;
+}
+
+.instructions {
+    grid-area: instructions;
+}
+
+.ingredients {
+    grid-area: ingredients;
+}
+
+.cocktailDetails mat-divider {
+    grid-area: divider;
+}
+
+.cocktailDetails mat-grid-list {
+    grid-area: other;
+}

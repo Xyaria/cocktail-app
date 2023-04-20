@@ -1,4 +1,4 @@
-<button class="reloadBtn" (click)="onReload()">Reroll!</button>
 <div class="wrapper">
     <app-cocktail-card *ngFor="let card of cardList" [card]="card" @comeAndLeave></app-cocktail-card>
 </div>
+<button mat-raised-button class="reloadBtn" (click)="onReload()">Reroll!</button>

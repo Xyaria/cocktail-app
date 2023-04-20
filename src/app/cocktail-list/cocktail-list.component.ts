@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cocktail } from '../models/cocktail.model';
 import { CocktailService } from '../services/cocktail.service';
-import { animate, animateChild, group, query, stagger, style, transition, trigger } from '@angular/animations';
+import { animate, query, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-cocktail-list',
@@ -66,7 +66,7 @@ export class CocktailListComponent implements OnInit {
               .filter(item => item.startsWith("strMeasure"))
               .map(o => value[o]);
 
-        this.cardList.push(new Cocktail(value['idDrink'], value['strDrink'], value['strAlcoholic'], value['strGlass'], value['strInstructions'], value['strDrinkThumb'], strIngredients, strMeasures));
+        this.cardList.push(new Cocktail(value['idDrink'], value['strDrink'], value['strAlcoholic'], value['strGlass'], value['strDrinkThumb'], strIngredients, strMeasures));
       }
     });
   }

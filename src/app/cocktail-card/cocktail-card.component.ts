@@ -13,7 +13,7 @@ import { trigger, transition, animate, style, state } from '@angular/animations'
         height: '0'
       })),
       state('open', style({
-        height: '200px'
+        height: '180px'
       })),
       transition('close <=> open', [
         animate('0.5s')
@@ -33,7 +33,6 @@ import { trigger, transition, animate, style, state } from '@angular/animations'
 export class CocktailCardComponent implements OnInit{
   @Input() card!: Cocktail;
   color: number[] = [0, 0, 0];
-  show: boolean = false;
   detailState: 'open' | 'close' = 'close';
 
   ngOnInit(): void {
@@ -50,6 +49,5 @@ export class CocktailCardComponent implements OnInit{
 
   onToggle(): void {
     this.detailState = this.detailState === 'close' ? 'open' : 'close';
-    this.show = !this.show;
   }
 }

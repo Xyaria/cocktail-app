@@ -1,17 +1,18 @@
-header {
+mat-card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-area: header;
-    box-sizing: border-box;
+    height: 10vh;
     
     padding: 0.5em 0;
     margin-bottom: 1em;
-    background-color: rgb(0, 25, 79);
-    text-align: center;
+    background-color: var(--header-color);
 }
 
-h1 {
+mat-card-title {
     font-family: 'VT323';
     font-size: 40px;
-    color: white;
 
-    text-shadow: 0 0 10px rgb(255, 0, 208), 0 0 1em blue, 0 0 1em blue;
+    text-shadow: var(--shadow-orange-pink);
 }

@@ -1,6 +1,20 @@
+:root {
+    --gradient-blue-purple: linear-gradient(rgb(31, 65, 200), rgb(163, 31, 200));
+    --gradient-purple-blue: linear-gradient(rgb(163, 31, 200), rgb(31, 65, 200));
+    --gradient-blue-purple-orange: linear-gradient(rgb(31, 65, 200), rgb(101, 31, 200), rgb(163, 31, 200), rgb(230, 126, 0));
+    --gradient-orange-purple: linear-gradient(rgb(230, 126, 0), rgb(163, 31, 200));
+    --gradient-purple-orange: linear-gradient(rgb(163, 31, 200), rgb(230, 126, 0));
+    --shadow-orange: 0 0 10px rgb(230, 126, 0);
+    --shadow-orange-pink:0 0 10px rgb(230, 126, 0), 0 0 1em rgb(255, 0, 208), 0 0 1em rgb(255, 0, 208);
+    --card-color: #000be299;
+    --border-color: #000e6199;
+    --header-color: #00194F;
+}
+
 html, body {
     margin: 0;
     padding: 0;
+    height: 100%; 
     display: grid;
     grid-template:
     "btn" 2% 
@@ -10,6 +24,8 @@ html, body {
 }
 
 body {
-    height: 100vh;
-    background-image: linear-gradient(rgb(31, 65, 200), rgb(101, 31, 200), rgb(163, 31, 200), rgb(230, 126, 0));
+    background-image: var(--gradient-blue-purple-orange);
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    color: white;
 }

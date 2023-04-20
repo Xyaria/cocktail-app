@@ -12,4 +12,8 @@ export class CocktailService{
     getCocktail(): Observable<any> {
         return this._http.get<any>('https://www.thecocktaildb.com/api/json/v1/1/random.php');
     }
+
+    getOneCocktail(id: number): Observable<any> {
+        return this._http.get<any>(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`);
+    }
 }

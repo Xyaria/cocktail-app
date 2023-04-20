@@ -1,0 +1,64 @@
+mat-form-field {
+    width: 80%;
+    height: 50px;
+    margin-left: 10%;
+    margin-top: 5%;
+    text-shadow: var(--shadow-orange);
+}
+  
+.form-card {
+    margin: 20px 0;
+}
+  
+mat-card-actions {
+    margin: 0 auto;
+    text-align: center;
+}
+
+mat-label {
+    color: white;
+}
+
+button {
+    border-radius: 10px;
+    margin-top: -30px;
+    background-image: var(--gradient-orange-purple);
+    font-weight: bold;
+}
+
+button:hover {
+    background-image: var(--gradient-purple-orange);
+}
+
+mat-card-title {
+    text-align: center;
+    font-size: 42px;
+    font-family: 'VT323';
+    width: 10em;
+    position: absolute;
+    top: 1em;
+    left: calc(50% - 5em);
+    text-shadow: var(--shadow-orange-pink);
+}
+  
+.main-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-image: var(--gradient-purple-blue);
+    border: 3px solid var(--border-color);
+    border-radius: 10px;
+
+    width: 300px;
+    height: 400px;
+
+    position: absolute;
+    left: calc(50% - 150px);
+    top: calc(50% - 200px);
+}
+
+p {
+    margin: -8px auto -9px;
+    text-align: center;
+}
