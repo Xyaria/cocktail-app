@@ -17,15 +17,17 @@ html, body {
     height: 100%; 
     display: grid;
     grid-template:
-    "btn" 2% 
-    "head" 10%
-    "wrapper" 88%
+    "header" 10%
+    "wrapper" 90%
     / 1fr;
 }
 
 body {
     background-image: var(--gradient-blue-purple-orange);
-    margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif; 
     color: white;
+}
+
+.hidden {
+    visibility: hidden;
 }

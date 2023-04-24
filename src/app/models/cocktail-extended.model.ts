@@ -3,5 +3,5 @@ export class CocktailExtended {
                 public tags: string[],
                 public IBA: string,
                 public instructions: string,
-                public lastModified: string){}
+                public lastModified: Date){}
 }

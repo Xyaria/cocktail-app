@@ -1,4 +1,5 @@
 <mat-card class=" main-form" [formGroup]="mainForm">
+    <p class="disconnectMsg hidden">Your session has expired.</p>
     <div class="form-card">
         <mat-card-title>Sign In</mat-card-title>
         <mat-form-field appearance="outline" color="accent">
@@ -9,8 +10,8 @@
             <mat-label>Password</mat-label>
             <input type="password" matInput formControlName="pwd">
         </mat-form-field>
-        <p *ngIf="!canConnect">Login or password incorrect</p>
     </div>
+    <p *ngIf="!canConnect">Login or password incorrect</p>
     <mat-card-actions *ngIf="mainForm.valid">
         <button mat-raised-button (click)="onLogin()">Go To Cocktails!</button>
     </mat-card-actions>

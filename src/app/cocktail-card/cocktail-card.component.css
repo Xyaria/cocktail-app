@@ -3,26 +3,27 @@
     width: 300px;
     padding-bottom: 0.5em;
 
+    background-color: var(--card-color);
     border: 1px solid var(--border-color);
     border-radius: 10px;
-    text-align: center !important;
 
-    background-color: var(--card-color);
+    text-align: center !important;
 }
 
 .card:hover {
     cursor: pointer;
     transform: scale(1.01);
-    border: 5px solid var(--border-color);
+    border-width: 5px;
 }
 
 .card .details {
+    margin: 0 1em;
     height: 0px;
+
     overflow: auto;
     overflow-x: hidden;
+
     background-color: transparent;
-    
-    margin: 0 1em;
 }
 
 .card .details *:not(a, img){
@@ -34,13 +35,15 @@
 }
 
 .card img {
-    border-radius: 10px;
+    margin: auto;
     width: 200px;
-    margin: auto
+
+    border-radius: 10px;
 }
 
 .card mat-card-title {
     margin: 0.5em auto;
+
     font-family: 'VT323';
     font-size: 24px;
     text-shadow: var(--shadow-orange-pink);
@@ -56,14 +59,15 @@
 }
 
 .card a {
-    text-align: center;
     height: 1.5em;
+
+    text-align: center;
     color: white !important;
 }
 
 .card a:hover {
-     text-shadow: var(--shadow-orange-pink); 
     transform: scale(1.1);
+    text-shadow: var(--shadow-orange-pink);
 }
 
 ::-webkit-scrollbar {

@@ -44,7 +44,7 @@ export class CocktailListComponent implements OnInit {
 
   constructor(private service: CocktailService){}
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     for (let index = 0; index < this.nbCocktail; index++) {
       this.formatCocktail();
     }
@@ -66,7 +66,7 @@ export class CocktailListComponent implements OnInit {
               .filter(item => item.startsWith("strMeasure"))
               .map(o => value[o]);
 
-        this.cardList.push(new Cocktail(value['idDrink'], value['strDrink'], value['strAlcoholic'], value['strGlass'], value['strDrinkThumb'], strIngredients, strMeasures));
+        this.cardList.push(new Cocktail(value['idDrink'], value['strDrink'], value['strAlcoholic'], value['strGlass'], value['strDrinkThumb'] + '/preview', strIngredients, strMeasures));
       }
     });
   }

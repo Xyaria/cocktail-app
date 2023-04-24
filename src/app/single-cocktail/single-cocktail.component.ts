@@ -2,7 +2,7 @@ import { transition, animate, style, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Cocktail } from '../models/cocktail.model';
 import { CocktailService } from '../services/cocktail.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CocktailExtended } from '../models/cocktail-extended.model';
 
 @Component({
@@ -25,19 +25,19 @@ import { CocktailExtended } from '../models/cocktail-extended.model';
 })
 export class SingleCocktailComponent implements OnInit{
   id!: number;
-  cocktail!: Cocktail;
-  cocktailExtended!: CocktailExtended;
-  buttonText: string = "Set As Favorite";
+  cocktail: Cocktail = new Cocktail(0, '', '', '', '../../assets/placeholder.jpg', [''], ['']);
+  cocktailExtended: CocktailExtended = new CocktailExtended('', [''], '', '', new Date());
 
   constructor(private service: CocktailService,
-              private router: ActivatedRoute){}
+              private route: ActivatedRoute,
+              private router: Router){}
 
   ngOnInit(): void{
     this.formatCocktail();
   }
 
   private formatCocktail(): void {
-    this.id = this.router.snapshot.params['id'];
+    this.id = this.route.snapshot.params['id'];
     this.service.getOneCocktail(this.id).subscribe({
       next: value => {
         value = value['drinks'][0];
@@ -53,18 +53,13 @@ export class SingleCocktailComponent implements OnInit{
               .filter(item => item.startsWith("strMeasure"))
               .map(o => value[o]);
 
-        this.cocktail = new Cocktail(value['idDrink'], value['strDrink'], value['strAlcoholic'], value['strGlass'], value['strDrinkThumb'], strIngredients, strMeasures);
-        this.cocktailExtended = new CocktailExtended(value['strCategory'], value['strTags'], value['strIBA'], value['strInstructions'], value['dateModified']);
+        this.cocktail = new Cocktail(value['idDrink'], value['strDrink'], value['strAlcoholic'], value['strGlass'], value['strDrinkThumb'] + '/preview', strIngredients, strMeasures);
+        this.cocktailExtended = new CocktailExtended(value['strCategory'], value['strTags'], value['strIBA'], value['strInstructions'], new Date(value['dateModified'].replace(" ", "T")));
       }
     });
   }
 
-  onSetFave(): void {
-    if(this.buttonText == "Set As Favorite") {
-      this.buttonText = "Remove Favorite";
-      
-      return;
-    }
-    this.buttonText = "Set As Favorite";
+  onBackToList() {
+    this.router.navigateByUrl('/cocktail');
   }
 }

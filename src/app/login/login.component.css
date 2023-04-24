@@ -1,8 +1,10 @@
 mat-form-field {
-    width: 80%;
-    height: 50px;
     margin-left: 10%;
     margin-top: 5%;
+
+    width: 80%;
+    height: 50px;
+
     text-shadow: var(--shadow-orange);
 }
   
@@ -12,6 +14,7 @@ mat-form-field {
   
 mat-card-actions {
     margin: 0 auto;
+
     text-align: center;
 }
 
@@ -19,11 +22,19 @@ mat-label {
     color: white;
 }
 
+input {
+    color: white !important;
+}
+
 button {
-    border-radius: 10px;
     margin-top: -30px;
+
+    border-radius: 10px;
     background-image: var(--gradient-orange-purple);
+
     font-weight: bold;
+    color: white !important;
+    text-shadow: var(--shadow-orange);
 }
 
 button:hover {
@@ -31,34 +42,36 @@ button:hover {
 }
 
 mat-card-title {
-    text-align: center;
-    font-size: 42px;
-    font-family: 'VT323';
-    width: 10em;
     position: absolute;
     top: 1em;
     left: calc(50% - 5em);
+    width: 10em;
+
+    text-align: center;
+    font-size: 42px;
+    font-family: 'VT323';
     text-shadow: var(--shadow-orange-pink);
 }
   
 .main-form {
+    position: absolute;
+    left: calc(50% - 150px);
+    top: calc(50% - 200px);
+
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    background-image: var(--gradient-purple-blue);
-    border: 3px solid var(--border-color);
-    border-radius: 10px;
-
     width: 300px;
     height: 400px;
 
-    position: absolute;
-    left: calc(50% - 150px);
-    top: calc(50% - 200px);
+    background-image: var(--gradient-purple-blue);
+    border: 3px solid var(--border-color);
+    border-radius: 10px;
 }
 
 p {
-    margin: -8px auto -9px;
+    margin: 0 auto 1em;
+
     text-align: center;
 }

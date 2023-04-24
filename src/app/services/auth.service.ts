@@ -1,24 +1,28 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private token: string | null = null;
   private user = {
     login: 'test',
     pwd: 'test'
   }
 
+  constructor(private router: Router){}
+
+  async loginTimeout() {
+
+  }
+
   login(values: any) {
     if(values.login === this.user['login'] && values.pwd === this.user['pwd']) {
-      this.token = 'canConnect';
-      return;
+      localStorage.setItem('token', 'ok');
     }
-    return;
   }
 
   getToken() {
-    return this.token;
+    return localStorage.getItem('token');
   }
 }

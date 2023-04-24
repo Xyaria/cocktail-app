@@ -1,16 +1,15 @@
 .wrapper {
     grid-area: wrapper;
     box-sizing: border-box;
+    width: 100%;
 
     display: flex;
-    width: 100%;
-    gap: 3em;
     align-items: stretch;
     justify-content: space-evenly;
+    gap: 3em;
 }
 
 button {
-    grid-area: btn;
     position: absolute;
     width: 8%;
     left: 46%;
@@ -25,6 +24,8 @@ button {
     font-weight: bold;
     background-image: var(--gradient-blue-purple);
     box-shadow: var(--shadow-orange-pink);
+    color:white !important;
+    text-shadow: var(--shadow-orange);
     border: transparent;
     border-radius: 10px;
 }

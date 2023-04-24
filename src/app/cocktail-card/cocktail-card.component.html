@@ -1,6 +1,6 @@
 <mat-card class="card" (click)="onToggle()">
     <mat-card-title>{{card.name}}</mat-card-title>
-    <img [src]="card.thumbnail + '/preview'" [ngStyle]="{border: '5px solid rgb(' + color[0] + ', ' + color[1] + ', ' + color[2] + ')'}">
+    <img [src]="card.thumbnail" [ngStyle]="{border: '5px solid rgb(' + color[0] + ', ' + color[1] + ', ' + color[2] + ')'}">
     <p class="type"><em>{{card.type}}</em></p>
     <p *ngIf="detailState == 'open'">Serve in {{card.glass | lowercase}}</p>
     <mat-card class="details" [@openDetail]="detailState" @leaveDetail>
@@ -13,5 +13,5 @@
             </mat-list-item>
         </mat-list>
     </mat-card>
-    <a routerLink="{{card.id}}" *ngIf="detailState == 'open'">>More on this cocktail!<</a>
+    <a routerLink="{{card.id}}" *ngIf="detailState == 'open'">> More on this cocktail! <</a>
 </mat-card>

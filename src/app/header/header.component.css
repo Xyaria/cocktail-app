@@ -16,3 +16,38 @@ mat-card-title {
 
     text-shadow: var(--shadow-orange-pink);
 }
+
+button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 2em;
+    top: 2em;
+    width: 40px;
+    height: 40px;
+    background-color: var(--card-color);
+    border: transparent;
+    border-radius: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-image: var(--gradient-blue-purple);
+    width: 100px;
+}
+
+span {
+    display: none;
+    color: white;
+    font-weight: bold;
+}
+
+button:hover span {
+    display: inline;
+}
+
+mat-icon {
+    color: white;
+}
